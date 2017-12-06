@@ -119,3 +119,7 @@ c = '1'
 print(c == 1) # False - C is a string, 1 is an int
 print(int(c) == 1) # True - Compares two ints
 print(c == str(1)) # True - Compares two strings
+
+
+num = input("Give me a number")
+# Inputs are ALWAYS (!!!!!!!) of type of string!!!
