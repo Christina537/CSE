@@ -7,7 +7,8 @@ import random
 money = 15
 played = 0
 highest = money
-
+broke = False
+total_rounds = 0
 
 
 while money > 0:
@@ -20,13 +21,20 @@ while money > 0:
     roll = (dic_1 + dic_2)
     if roll == 7:
         money += 4
-        print("Your max is %s" % highest)
+        if money > highest:
+            highest = money
+            total_rounds = played
     elif roll != 7:
         money -= 1
         played += 1
 
 if money == 0:
     print("you played %s rounds" % played)
+    if highest < 15:
+        print("you didn't earn any money ")
+    elif highest > 14:
+        print("You should've stopped at round %s when you had $%s" % (total_rounds, highest))
+        broke = True
 
 
 
